@@ -29,7 +29,7 @@ function GraphPie({enviardataGraph}) {
                     // is3D: true,
                     chartArea:{top:21,width:'90%',height:'84%'},
                     legend: { position: 'bottom',textStyle: {color: 'black', fontSize: 13} },
-                    slices: [{offset : 0.1}],
+                    slices: [{offset : 0}],
                     titleTextStyle:{ fontSize: 8, color:'gray'},
                     is3D: true,
                 }}

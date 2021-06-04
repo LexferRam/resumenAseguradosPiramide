@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import imgPira from "../logo-piramide.svg"
+import imgOcea from "../img.png"
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +36,7 @@ function ButtonAppBar(props) {
         <div className={classes.root}>
             <AppBar color="white" position="static">
                 <Toolbar className={classes.menu}>
-                    <img src={imgPira} className={classes.logo} />
+                    <img src={imgOcea} className={classes.logo} />
                 </Toolbar>
             </AppBar>
         </div>
