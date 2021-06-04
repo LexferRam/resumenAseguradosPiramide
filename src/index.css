@@ -1,8 +1,9 @@
 *{
-  font-size: 15px ;
+  font-size: 14px ;
   /* margin: 0px !important; */
 }
 body {
+  background-color:#efefef ;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -36,3 +37,16 @@ code {
 .table>tr:nth-of-type(odd) {
   background-color: #f3f2f8 !important;
 }
+
+.table>tr{
+  height: 10px !important;
+}
+
+td{
+     min-height: 10px;
+  height: 10px !important;
+}
+.MuiTableCell-root{
+  padding: 7px !important;
+}
+

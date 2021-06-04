@@ -7,9 +7,7 @@ import Months from "./Months"
 export const Inputs = () => {
     const [year, setYear] = React.useState('');
     const [month, setMonth] = React.useState('');
-
-
-            
+           
     const {
         providers, years,getListYears,
         disabledYear,setDisabledYear,listDaysEjec,disabledMonths,
@@ -47,12 +45,12 @@ export const Inputs = () => {
 
     return (
         <>
-            <Paper elevation={15} style={{width:"95%",padding:20, margin:10 }}>
+            <Paper elevation={10} style={{width:"95%",padding:20, margin:10 }}>
                 <Grid container spacing={8}>
                     <Grid item xs={12} sm={3}>
                         <TextField
                             select
-                            label="Proveedores"
+                            label="PROVEEDOR"
                             // value={currency}
                             onChange={handleChange}
                             fullWidth
@@ -67,7 +65,7 @@ export const Inputs = () => {
                     <Grid item xs={12} sm={2}>
                         <TextField
                             select
-                            label="Año"
+                            label="AÑO"
                             value={year}
                             onChange={handleChangeYear}
                             disabled={disabledYear}
@@ -83,7 +81,7 @@ export const Inputs = () => {
                     <Grid item xs={12} sm={2}>
                         <TextField
                             select
-                            label="Meses"
+                            label="MESES"
                             value={month}
                             onChange={handleChangeMonth}
                             disabled={disabledMonths}
@@ -99,7 +97,7 @@ export const Inputs = () => {
                     <Grid item xs={12} sm={2}>
                         <TextField
                             select
-                            label="Lote"
+                            label="DÍAS DE ENVÍO"
                             value={lote}
                             onChange={handleChangeLote}
                             disabled={disabledLote}
@@ -107,23 +105,22 @@ export const Inputs = () => {
                         >
                             {lotes.map((lote, index) => (
                                 <MenuItem key={index} value={lote.NLOTE}>
-                                    {lote.NLOTE}
+                                    {lote.DIA}
                                 </MenuItem>
                             ))}
                         </TextField>
                     </Grid>
                     <Grid item xs={12} sm={1}>
                         <Button
-                            variant="outlined"
-                            color="secondary"
+                            variant="contained"
                             id="btnBuscar"
-                            startIcon={<SearchIcon />}
+                            startIcon={<SearchIcon style={{ color:"white"}}/>}
                             onClick={() => getResumenAsegProv(lote, providerSelect)}
                             disabled={disabledBtn}
-                            style={{borderRadius:50,marginTop:18}}
+                            style={{borderRadius:50,marginTop:18, backgroundColor:"#bd261e"}}
                             size="small"
                         >
-                            <span style={{fontSize:10}}>Buscar</span>
+                            <span style={{fontSize:10, color:"white"}}>BUSCAR</span>
                         </Button>
                     </Grid>
                 </Grid>
