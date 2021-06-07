@@ -47,7 +47,7 @@ function TblInsuredByProvider() {
     </p> */}
 
     <div style={{ display: "flex", marginBottom: 5, marginTop: 10 }}>
-          <p style={{ color: "gray", marginLeft: 30, marginRight: 20, fontWeight: 600 }}>DETALLE ASEGURADOS POR PROVEEDOR ({rowSelected.DESTIPOSUSC}-{rowSelected.DESTIPOCOTPOL}-{rowSelected.CODMONEDA})</p>
+          <p style={{ color: "black", marginLeft: 30, marginRight: 20, fontWeight: 600 }}>DETALLE ASEGURADOS POR PROVEEDOR ({rowSelected.DESTIPOSUSC}-{rowSelected.DESTIPOCOTPOL}-{rowSelected.CODMONEDA})</p>
         </div>
         <div style={{ display: "flex", marginLeft: 30 }}>
         <TextField

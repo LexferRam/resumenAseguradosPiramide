@@ -17,25 +17,28 @@ function GraphPie({enviardataGraph}) {
     },[enviardataGraph])
 
     return (
+        <>
+        <p style={{ color: "black", marginLeft: 30, marginRight: 20, fontWeight: 600,textAlign:"center" }}>PORCENTAJES  RESUMEN  ASEGURADOS</p>
         <div style={{marginTop:50}}>
             <Chart
-                width={'390px'}
-                height={'270px'}
+                width={'100%'}
+                height={'100%'}
                 chartType="PieChart"
                 loader={<div style={{color:"gray"}}>Cargando Gráfica...</div>}
                 data={json}
                 options={{
-                    title: 'PORCENTAJES  RESUMEN  ASEGURADOS',
+                    // title: 'PORCENTAJES  RESUMEN  ASEGURADOS',
                     // is3D: true,
-                    chartArea:{top:21,width:'90%',height:'84%'},
-                    legend: { position: 'bottom',textStyle: {color: 'black', fontSize: 13} },
+                    chartArea:{width:'100%',height:'90%'},
+                    legend: { position: 'left',textStyle: {color: 'black', fontSize: 8} },
                     slices: [{offset : 0}],
-                    titleTextStyle:{ fontSize: 8, color:'gray'},
+                    titleTextStyle:{ color:'gray',textAlign:"center"},
                     is3D: true,
                 }}
                 rootProps={{ 'data-testid': '2' }}
             />
         </div>
+        </>
     )
 }
 
