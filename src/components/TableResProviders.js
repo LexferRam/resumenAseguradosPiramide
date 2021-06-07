@@ -38,7 +38,7 @@ function TableResProviders() {
     return (
       <>
         <div style={{ display: "flex", marginBottom: 10 }}>
-          <p style={{ color: "gray", marginLeft: 10, marginRight: 20, fontWeight: 600 }}>RESUMEN ASEGURADOS POR PROVEEDOR</p>
+          <p style={{ color: "black", marginLeft: 10, marginRight: 20, fontWeight: 600 }}>RESUMEN ASEGURADOS POR PROVEEDOR</p>
           <Exportarexcel enviarjsonGrid={resumenProviders} titulo="RESUMEN ASEGURADOS POR PROVEEDOR" />
         </div>
         <Paper elevation={24} style={{width:"97%" }}>
