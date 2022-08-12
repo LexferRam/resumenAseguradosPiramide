@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import imgOcea from "../img.png"
+import imgPira from '../logo-piramide.svg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +37,7 @@ function ButtonAppBar(props) {
         <div className={classes.root}>
             <AppBar color="white" position="static">
                 <Toolbar className={classes.menu}>
-                    <img src={imgOcea} className={classes.logo} />
+                    <img src={imgPira} className={classes.logo} />
                 </Toolbar>
             </AppBar>
         </div>

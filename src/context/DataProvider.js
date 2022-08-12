@@ -4,7 +4,7 @@ import axios from 'axios'
 export const DataContext = createContext();
 
 const DataProvider= ({children}) => {
-    const URL = process.env.REACT_APP_URL;
+    const URL = process.env.REACT_APP_COMPANY === 'PIRAMIDE' ? process.env.REACT_APP_URL_PIRAMIDE : process.env.REACT_APP_URL_OCEANICA;
     const divRef = useRef(null);
 
     const [providers, setProviders] = useState([])

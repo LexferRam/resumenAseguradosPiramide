@@ -117,7 +117,7 @@ export const Inputs = () => {
                             startIcon={<SearchIcon style={{ color:"white"}}/>}
                             onClick={() => getResumenAsegProv(lote, providerSelect)}
                             disabled={disabledBtn}
-                            style={{borderRadius:50,marginTop:18, backgroundColor:"#47c0b6"}}
+                            style={{borderRadius:50,marginTop:18, backgroundColor:"#c7650e"}}
                             size="small"
                         >
                             <span style={{fontSize:10, color:"white"}}>BUSCAR</span>
