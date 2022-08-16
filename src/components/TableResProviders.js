@@ -55,61 +55,58 @@ function TableResProviders() {
               <TableCell align="center">TIPO DE PÓLIZA</TableCell> 
               <TableCell align="center">CÓDIGO MONEDA</TableCell>
               <TableCell align="center">CANTIDAD DE ASEGURADOS</TableCell>
+              {providerSelect === '25019' && <TableCell align="center">SUMA ASEGURADA</TableCell>}
               <TableCell align="center">PORCENTAJE</TableCell>
               <TableCell align="center">VER DETALLE</TableCell>
             </TableRow>
           </TableHead>
           <TableBody className="table">
-            {resumenProviders.map((row,index) => (
-              <TableRow key={index}>
-                <TableCell component="th" scope="row" style={{display:"none"}}>
-                  {row.ORDEN}
-                </TableCell>
-                <TableCell align="center" style={{display:"none"}}>{row.TIPOSUSC}</TableCell>
-                {
-                  row.DESTIPOSUSC == "TOTAL" ?
-                    (<TableCell align="center" style={{ fontWeight: 800 }} >{row.DESTIPOSUSC}</TableCell>) :
-                    (<TableCell align="center" >{row.DESTIPOSUSC}</TableCell>)
-                }
-                <TableCell align="center" style={{display:"none"}}>{row.TIPOCOTPOL}</TableCell>
-                <TableCell align="center">{row.DESTIPOCOTPOL}</TableCell>
-                <TableCell align="center">{row.CODMONEDA}</TableCell>
-                {
-                  row.DESTIPOSUSC == "TOTAL" ?
-                    (<TableCell align="center" style={{ fontWeight: 800 }} >{formatoMexico(row.CANTIDAD)}</TableCell>) :
-                    (<TableCell align="center" >{formatoMexico(row.CANTIDAD)}</TableCell>)
-                }
-                {
-                  row.DESTIPOSUSC == "TOTAL" ?
-                    (<TableCell align="center" style={{ fontWeight: 800 }} >{row.PORCENTAJE  +" "+ "%"}</TableCell>) :
-                    (<TableCell align="center" >{row.PORCENTAJE.toFixed(2) +" "+ "%"}</TableCell>)
-                }
-                <TableCell align="center">
-                <Tooltip title="Ver Detalle" aria-label="Ver Detalle">
-                  <IconButton aria-label="detail" size="small" onClick={() =>{
-                      setRowSelected(row)
-                    //  alert(lote);
-                    //  alert(providerSelect)
-                    //  alert(row.TIPOSUSC)
-                    //  alert(row.TIPOCOTPOL)
-                    //  alert(row.CODMONEDA)
-                     const valores = {
-                      nLote:lote,
-                      cCodProv:providerSelect,
-                      cTipoSusc:row.TIPOSUSC,
-                      cTipoCotPol:row.TIPOCOTPOL,
-                      cCodMoneda:row.CODMONEDA
-                     }
-                    //  alert(JSON.stringify(valores)); 
-                      detailsInsuranceProvider(valores);
+                {resumenProviders.map((row, index) => (
+                  <TableRow key={index}>
+                    <TableCell component="th" scope="row" style={{ display: "none" }}>
+                      {row.ORDEN}
+                    </TableCell>
+                    <TableCell align="center" style={{ display: "none" }}>{row.TIPOSUSC}</TableCell>
+                    {
+                      row.DESTIPOSUSC == "TOTAL" ?
+                        (<TableCell align="center" style={{ fontWeight: 800 }} >{row.DESTIPOSUSC}</TableCell>) :
+                        (<TableCell align="center" >{row.DESTIPOSUSC}</TableCell>)
                     }
-                  }>
-                    <RemoveRedEyeIcon fontSize="inherit" />
-                  </IconButton>
-                 </Tooltip>
-                </TableCell>
-              </TableRow>
-            ))}
+                    <TableCell align="center" style={{ display: "none" }}>{row.TIPOCOTPOL}</TableCell>
+                    <TableCell align="center">{row.DESTIPOCOTPOL}</TableCell>
+                    <TableCell align="center">{row.CODMONEDA}</TableCell>
+
+                    {
+                      row.DESTIPOSUSC == "TOTAL" ?
+                        (<TableCell align="center" style={{ fontWeight: 800 }} >{formatoMexico(row.CANTIDAD)}</TableCell>) :
+                        (<TableCell align="center" >{formatoMexico(row.CANTIDAD)}</TableCell>)
+                    }
+                    {providerSelect === '25019' && <TableCell align="center">{ row.SUMAASEGMONEDA && formatoMexico(Number(row.SUMAASEGMONEDA))}</TableCell>}
+                    {
+                      row.DESTIPOSUSC == "TOTAL" ?
+                        (<TableCell align="center" style={{ fontWeight: 800 }} >{row.PORCENTAJE + " " + "%"}</TableCell>) :
+                        (<TableCell align="center" >{row.PORCENTAJE.toFixed(2) + " " + "%"}</TableCell>)
+                    }
+                    <TableCell align="center">
+                      <Tooltip title="Ver Detalle" aria-label="Ver Detalle">
+                        <IconButton aria-label="detail" size="small" onClick={() => {
+                          setRowSelected(row)
+                          const valores = {
+                            nLote: lote,
+                            cCodProv: providerSelect,
+                            cTipoSusc: row.TIPOSUSC,
+                            cTipoCotPol: row.TIPOCOTPOL,
+                            cCodMoneda: row.CODMONEDA
+                          }
+                          detailsInsuranceProvider(valores);
+                        }
+                        }>
+                          <RemoveRedEyeIcon fontSize="inherit" />
+                        </IconButton>
+                      </Tooltip>
+                    </TableCell>
+                  </TableRow>
+                ))}
           </TableBody>
         </Table>
       </TableContainer>
