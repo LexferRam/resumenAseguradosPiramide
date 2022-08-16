@@ -55,7 +55,7 @@ function TableResProviders() {
               <TableCell align="center">TIPO DE PÓLIZA</TableCell> 
               <TableCell align="center">CÓDIGO MONEDA</TableCell>
               <TableCell align="center">CANTIDAD DE ASEGURADOS</TableCell>
-              {providerSelect === '25019' && <TableCell align="center">SUMA ASEGURADA</TableCell>}
+              {(providerSelect === '25019' || providerSelect === '25363'|| providerSelect === '29402') && <TableCell align="center">SUMA ASEGURADA</TableCell>}
               <TableCell align="center">PORCENTAJE</TableCell>
               <TableCell align="center">VER DETALLE</TableCell>
             </TableRow>
@@ -81,7 +81,7 @@ function TableResProviders() {
                         (<TableCell align="center" style={{ fontWeight: 800 }} >{formatoMexico(row.CANTIDAD)}</TableCell>) :
                         (<TableCell align="center" >{formatoMexico(row.CANTIDAD)}</TableCell>)
                     }
-                    {providerSelect === '25019' && <TableCell align="center">{ row.SUMAASEGMONEDA && formatoMexico(Number(row.SUMAASEGMONEDA))}</TableCell>}
+                    {(providerSelect === '25019' || providerSelect === '25363'|| providerSelect === '29402') && <TableCell align="center">{ row.SUMAASEGMONEDA && formatoMexico(Number(row.SUMAASEGMONEDA))}</TableCell>}
                     {
                       row.DESTIPOSUSC == "TOTAL" ?
                         (<TableCell align="center" style={{ fontWeight: 800 }} >{row.PORCENTAJE + " " + "%"}</TableCell>) :
